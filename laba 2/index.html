@@ -5,39 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>КУПИ МУСОР ИЛИ ПОЖАЛЕЕШЬ!!!</title>
     <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
 </head>
 
 <body>
-    <div class="grid-container">
-        <aside class="ads left-ad">
-            <div class="ad-item">
-                <img src="img3.png" alt="Ad 1">
-            </div>
-            <div class="ad-item">
-                <img src="img4.png" alt="Ad 2">
-            </div>
-            <div class="fake-ad">продам гараж. вишневый.</div>
-            <div class="fake-ad">неЛЕГАЛЬНАЯ РАБОТА В АРМАВИРЕ! 100000000 РУБЛЕЙ НА РУКИ! </div>
-        </aside>
+    <button id="theme-btn">О ЧОРТ КАК СВЕТЛО ВЫКЛЮЧИТЬ 🌙</button>
 
-        <main class="main-content">
-            <header>
-                <section class="product-gallery">
-                    <div class="product-card">
-                        <img src="img1.jpg" alt="Ведро">
-                        <p>Ведро</p>
-                    </div>
-                    <div class="product-card">
-                        <img src="img2.jpg" alt="Ведро">
-                        <p>Содержимое ведра</p>
-                    </div>
-                </section>
-                
-                <h1 class="blink">МУСОР ИЗ 113 БЛОКА!!!!!!!!!</h1>
-                <p class="slogan">ОСТОРОЖНО! СЛИШКОМ КРУТОЕ ПРЕДЛОЖЕНИЕ</p>
-                <p class="slogan">ПОЧУВСТВУЙ СЕБЯ БОМЖОМ - ПОРОЙСЯ В ПОМОЙКЕ!</p>
-            </header>
+    <section class="ads banner-ads">
+        <div class="ad-item"><img src="img3.png" alt="Ad 1"></div>
+        <div class="fake-ad">продам гараж. вишневый.</div>
+        <div class="ad-item"><img src="img4.png" alt="Ad 2"></div>
+        <div class="fake-ad">неЛЕГАЛЬНАЯ РАБОТА В АРМАВИРЕ! 100000000 РУБЛЕЙ НА РУКИ!</div>
+    </section>
 
+    <header>
+        <section class="product-gallery">
+            <div class="product-card">
+                <img src="img1.jpg" alt="Ведро">
+                <p>Ведро</p>
+            </div>
+            <div class="product-card">
+                <img src="img2.jpg" alt="Ведро">
+                <p>Содержимое ведра</p>
+            </div>
+        </section>
+        
+        <h1 class="blink">МУСОР ИЗ 113 БЛОКА!!!!!!!!!</h1>
+        <p class="slogan">ОСТОРОЖНО! СЛИШКОМ КРУТОЕ ПРЕДЛОЖЕНИЕ</p>
+        <p class="slogan">ПОЧУВСТВУЙ СЕБЯ БОМЖОМ - ПОРОЙСЯ В ПОМОЙКЕ!</p>
+        
+        <button id="game-btn" class="buy-btn blink" style="margin-top: 20px; font-size: 1.2rem; background: #00ffff; box-shadow: 5px 5px 0 #000;">
+             ТУТ НЕ БУДЕТ КАЗИНО И ГОЛЫХ ЖЕНЩИН НО ТУТ МОЖНО ПОИГРАТЬ В ИГРУ! 
+        </button>
+    </header>
+
+    <main class="main-content">
+        <div class="central-column">
             <section class="top-reasons">
                 <h2>ТОП-5 ПРИЧИН КУПИТЬ ПРЯМО СЕЙЧАС:</h2>
                 <div class="reasons-flex">
@@ -51,37 +54,30 @@
 
             <section class="reviews">
                 <h3>ОТЗЫВЫ СЧАСТЛИВЧИКОВ</h3>
-                <div class="review">
-                    <strong>Макар, 10 лет:</strong> "Всё идеально, как и заявлял продавец. Мусор ⭐️⭐️⭐️⭐️⭐️"
-                </div>
-                <div class="review">
-                    <strong>Лев, 42 года:</strong> "Говно еб*ное. 10/10"
-                </div>
-                <div class="review">
-                    <strong>Дмитрий, 19 лет:</strong> "Я учусь в полицейском училище и на одном из заданий мне не хватило напарника, поэтому быстро пришлось искать замену. Огромное спасибо! #МусораРулят"
-                </div>
-                <div class="review">
-                    <strong>Владислав, 53 года:</strong> "падарил жине на васмое марта. ана меня бросела. спосибо. "
-                </div>
-                <div class="review">
-                    <strong>Вениамин, 35 лет:</strong> "Когда-то давно я лазил по помойкам, не имел определенного места жительства. Несколько лет назад я поднялся на продаже игровых карточек Скуби-ду. Сейчас я живу в огромном пентхаусе, но все равно каждый месяц покупаю этот мусор, чтобы вспомнить, с чего я начинал... спасибо."
-                </div>
+                <div id="reviews-container"></div>
+
+                <form id="review-form" class="review-form">
+                    <h4>КУПИЛ? бро ты странный... НО ПОДЕЛИСЬ ОТЗЫВОМ</h4>
+                    <input type="text" id="rev-name" placeholder="Твоя кличка (имя)">
+                    <textarea id="rev-text" placeholder="Что скажешь про мусор?"></textarea>
+                    <input type="url" id="rev-img" placeholder="Ссылка на фото (необязательно)">
+                    <button type="submit" class="submit-btn">ОТПРАВИТЬ ОТЗЫВ</button>
+                </form>
             </section>
 
             <button class="buy-btn">КУПИТЬ В 1 КЛИК ЗА 999₽</button>
-        </main>
+        </div>
+    </main>
 
-        <aside class="ads right-ad">
-            <div class="ad-item">
-                <img src="img5.png" alt="Ad 3">
-            </div>
-            <div class="ad-item">
-                <img src="img6.png" alt="Ad 4">
-            </div>
-            <div class="fake-ad">ВАНГА ПРЕДСКАЗАЛА, ЧТО ПРОГРАММИСТЫ В 2027 ГОДУ.... читать в источнике</div>
-            <div class="fake-ad">куплю рот возьму в пиво, ольга, 39, 300 м от Вас</div>
-        </aside>
+    <section class="ads banner-ads">
+        <div class="ad-item"><img src="img5.png" alt="Ad 3"></div>
+        <div class="fake-ad">ВАНГА ПРЕДСКАЗАЛА, ЧТО ПРОГРАММИСТЫ В 2027 ГОДУ.... читать в источнике</div>
+        <div class="ad-item"><img src="img6.png" alt="Ad 4"></div>
+        <div class="fake-ad">куплю рот возьму в пиво, ольга, 39, 300 м от Вас</div>
+    </section>
 
-    </div>
+    <footer>
+        <p>© 2026 ТРЕШ-ИНДАСТРИЗ.</p>
+    </footer>
 </body>
 </html>

@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -10,25 +9,67 @@ body {
     background-color: #b92a5e;
     color: #000;
     overflow-x: hidden;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: 250px 1fr 250px;
-    gap: 10px;
-    min-height: 100vh;
-    max-width: 1200px;
-    margin: 0 auto; 
-}
-
-
-.ads {
-    background: #ff5694;
-    padding: 5px;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+}
+
+
+header {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 5px solid #000;
+}
+
+
+main.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background: transparent;
+    flex: 1; 
+}
+
+
+.central-column {
+    padding: 20px;
+    text-align: center;
+    background: #fff;
+    border: 5px solid #000;
+}
+
+
+.ads.banner-ads {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: #ff5694;
+    padding: 15px;
     gap: 15px;
-    border: 2px solid #9d0202;
+    border: 5px dashed #9d0202;
+    width: 100%;
+}
+
+.banner-ads .ad-item, 
+.banner-ads .fake-ad {
+    flex: 1 1 200px; 
+    max-width: 250px;
+    text-align: center;
+}
+
+
+footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.8rem;
+    width: 100%;
 }
 
 
@@ -50,17 +91,9 @@ body {
 
 .ad-item img {
     width: 100%;
-    height: 300px;
+    height: 150px; 
+    object-fit: cover;
     border-bottom: 1px solid #000;
-}
-
-.ad-item p {
-    font-size: 0.7rem;
-    line-height: 1.1;
-    margin-top: 5px;
-    color: #08089f;
-    text-decoration: underline;
-    text-align: left;
 }
 
 .fake-ad {
@@ -68,51 +101,24 @@ body {
     padding: 5px;
     font-size: 0.8rem;
     background: #fff;
-    cursor: pointer;
-}
-
-.main-content {
-    background: #fff;
-    padding: 20px;
-    text-align: center;
-    border-left: 5px solid #000;
-    border-right: 5px solid #000;
 }
 
 .product-gallery {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-end;
-    gap: 15px;
-    padding: 20px 5px;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
     flex-wrap: wrap;
 }
 
-
-.product-card {
-    position: relative;
-    flex: 1 1 300px;
-    max-width: 350px;
-    border: 3px solid #000;
-    background: #fff;
-    padding: 10px;
-    text-align: center;
-    box-shadow: 15px 15px 0px #ffff00;
-}
-
 .product-card img {
-    width: 100%;
-    height: auto;
+    width: 100%;       
+    height: 200px;     
+    object-fit: cover; 
     display: block;
     margin-bottom: 10px;
-}
-
-.product-card p {
-    font-size: 0.8rem;
-    font-weight: bold;
-    background: #ab0061;
-    color: white;
 }
 
 .blink {
@@ -125,21 +131,11 @@ body {
     50% { opacity: 0; }
 }
 
-.slogan {
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin: 10px 0;
-    color: #010188;
-    text-transform: uppercase;
-}
-
-
 .reasons-flex {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
-    margin: 20px 0;
 }
 
 .reason-card {
@@ -147,40 +143,25 @@ body {
     background: #7eff7e;
     padding: 15px;
     border: 4px double #000;
-    font-weight: bold;
 }
-
-
-.reviews {
-    margin-top: 30px;
-    background: #eee;
-    padding: 10px;
-}
-
-.review {
-    font-style: italic;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ccc;
-    text-align: left;
-}
-
 
 .buy-btn {
     background: #d9ff00;
     padding: 20px;
     font-size: 1.5rem;
     border: none;
-    box-shadow: 5px 5px 0px #ab0707;
+    box-shadow: 5px 5px 0 #ab0707;
     cursor: pointer;
-    margin-top: 20px;
     width: 100%;
 }
 
-.buy-btn:hover {
-    transform: scale(1.1);
-}
 
-@media (max-width: 320px) {
+@media (max-width: 768px) {
+    .central-column {
+        border-left: none;
+        border-right: none;
+    }
+
     .blink {
         font-size: 1.4rem;
     }
@@ -198,7 +179,134 @@ body {
         padding: 15px;
     }
 
-    .ads {
-        display: none; 
+    .banner-ads {
+        padding: 10px;
     }
+    
+    .banner-ads .ad-item, 
+    .banner-ads .fake-ad {
+        flex: 1 1 45%;
+        max-width: none;
+    }
+}
+
+
+#theme-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #000;
+    color: #fff;
+    border: 3px dashed #fff;
+    padding: 15px;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+#theme-btn:hover {
+    background: #fff;
+    color: #000;
+    border-color: #000;
+}
+
+.review {
+    background: #eee;
+    margin: 10px 0;
+    padding: 10px;
+    border: 2px solid #000;
+    text-align: left;
+}
+
+.review-img {
+    max-width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    margin-top: 10px;
+    border: 2px solid #b92a5e;
+}
+
+.review-form {
+    background: #ffd1dc;
+    padding: 15px;
+    margin-top: 20px;
+    border: 4px dotted #000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.review-form input, .review-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #000;
+    font-family: inherit;
+}
+
+.submit-btn {
+    background: #ff5694;
+    color: #fff;
+    font-weight: bold;
+    border: 2px solid #000;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #000;
+}
+
+
+body.dark-mode {
+    background-color: #1a0610;
+    color: #fff;
+}
+
+body.dark-mode header,
+body.dark-mode main.main-content,
+body.dark-mode .ad-item,
+body.dark-mode .fake-ad,
+body.dark-mode .review,
+body.dark-mode .review-form {
+    background: #222;
+    color: #fff;
+    border-color: #fff;
+}
+
+body.dark-mode .central-column {
+    border-color: #fff;
+}
+
+body.dark-mode .ads {
+    background: #3a1322;
+    border-color: #fff;
+}
+
+body.dark-mode .reason-card {
+    background: #004d00;
+    color: #fff;
+    border-color: #fff;
+}
+
+body.dark-mode .buy-btn,
+body.dark-mode .submit-btn {
+    background: #444;
+    color: #00ff00;
+    box-shadow: 5px 5px 0 #fff;
+    border-color: #fff;
+}
+
+body.dark-mode footer {
+    background: #fff;
+    color: #000;
+}
+
+body.dark-mode .review-form input,
+body.dark-mode .review-form textarea {
+    background: #111;
+    color: #fff;
+    border-color: #fff;
 }
