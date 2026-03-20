@@ -1,0 +1,259 @@
+@font-face {
+    font-family: 'KalinkaMalinka';
+    src: url('kalinkamalinka.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'MoniqaDisplay';
+    src: url('moniqa-display.ttf') format('truetype');
+}
+
+:root {
+    --bg-dark: #0f111a;
+    --text-red: #8b1a1a;
+    --card-inner: #f2e9d8;
+}
+
+body {
+    background-color: var(--bg-dark);
+    margin: 0;
+    padding: 0;
+    font-family: 'MoniqaDisplay', serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 60px;
+    box-sizing: border-box;
+}
+
+.header-banner {
+    background-color: var(--card-inner);
+    padding: 20px 50px 30px 50px;
+    border-radius: 0 0 40px 40px;
+}
+
+.header-banner h1 {
+    font-family: 'KalinkaMalinka', serif;
+    color: var(--text-red);
+    font-size: 64px; 
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.edit-mode-btn {
+    margin-top: 25px;
+    background-color: #1a2a44;
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 30px;
+    font-size: 42px;
+    font-family: 'MoniqaDisplay', serif;
+    cursor: pointer;
+}
+
+
+#main-deck {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 80px 40px;
+    flex-wrap: wrap;
+}
+
+
+.card-outer {
+    width: 360px;
+    height: 540px;
+    border-radius: 35px;
+    padding: 18px;
+    box-sizing: border-box;
+    transition: transform 0.2s;
+}
+
+.card-inner {
+    background-color: var(--card-inner);
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    position: relative;
+    padding: 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+}
+
+
+.card-name {
+    font-family: 'KalinkaMalinka', serif;
+    color: var(--text-red);
+    font-size: 62px;
+    margin: 0;
+    z-index: 10;
+    position: relative;
+    line-height: 0.9;
+}
+
+.card-role {
+    position: absolute;
+    top: 35px;
+    right: 25px;
+    font-family: 'MoniqaDisplay', serif;
+    font-size: 38px;
+    color: #1a2a44;
+}
+
+.card-stats {
+    margin-top: 20px;
+    font-family: 'MoniqaDisplay', serif;
+    font-size: 30px;
+    color: #333;
+    line-height: 1.1;
+    z-index: 10;
+    position: relative;
+}
+
+
+.ability-badge {
+    position: absolute;
+    left: 0;
+    bottom: 40px;
+    background-color: #c5a059;
+    padding: 12px 20px 12px 15px;
+    border-radius: 0 25px 25px 0;
+    width: 80%;
+    z-index: 4;
+}
+
+.ability-label {
+    font-family: 'MoniqaDisplay', serif;
+    color: var(--text-red);
+    font-weight: bold;
+    display: block;
+    font-size: 32px;
+}
+
+.ability-text {
+    font-family: 'MoniqaDisplay', serif;
+    color: white;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.char-art {
+    position: absolute;
+    bottom: -10px;
+    right: -75px;
+    width: 290px;
+    height: 440px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    z-index: 3;
+    pointer-events: none;
+}
+
+
+.edit-input {
+    font-family: 'MoniqaDisplay', serif;
+    background: rgba(255,255,255,0.9);
+    border: 1px solid #999;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.edit-input.name-input {
+    width: 55%; 
+    font-family: 'KalinkaMalinka', serif;
+    font-size: 38px;
+    color: var(--text-red);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px dashed var(--text-red);
+}
+
+.edit-select {
+    position: absolute;
+    top: 35px;
+    right: 20px;
+    font-family: 'MoniqaDisplay', serif;
+    font-size: 28px;
+    background: #f2e9d8;
+    border: 1px solid #1a2a44;
+    border-radius: 5px;
+    color: #1a2a44;
+    cursor: pointer;
+}
+
+.stat-input {
+    width: 80px;
+    font-size: 24px;
+}
+
+.ability-edit {
+    width: 100%;
+    height: 80px;
+    resize: none;
+    font-size: 20px;
+}
+
+.stat-row { 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    margin-bottom: 4px; 
+}
+
+.btn-delete {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #8b1a1a;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 35px; /* Увеличил кнопку удаления */
+    height: 35px;
+    cursor: pointer;
+    z-index: 20;
+    font-size: 20px;
+}
+
+.add-card-container {
+    width: 360px;
+    height: 540px;
+    border: 4px dashed #333;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255,255,255,0.05);
+}
+
+.add-btn-circle {
+    background: #c5a059;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    cursor: pointer;
+    color: white;
+}
