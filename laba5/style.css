@@ -225,7 +225,7 @@ header {
     color: white;
     border: none;
     border-radius: 50%;
-    width: 35px; /* Увеличил кнопку удаления */
+    width: 35px; 
     height: 35px;
     cursor: pointer;
     z-index: 20;
